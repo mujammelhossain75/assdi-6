@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+}
+
+/*------start css------*/
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.container h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 30px 0;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000;
+    margin: 20px 0;
+}
+
+.card-item{
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            transition: transform 0.2s ease-in-out;
+        }
+.card-item h2{
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    padding: 20px 10px;
+    
+}
+.card-item p{
+    text-align: center;
+}
+.card-item input{
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+    
+}
+.card-item label{
+            margin: 5px 0;
+            font-weight: bold;
+}
+.card-item button{
+           padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #333;
+            transition: background-color 0.3s ease;
+}
+.result {
+    padding: 20px;
+    margin: 10px;
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+.result p {
+    font-size: 25px;
+    font-weight: 700;
+}
+.result p span {
+    color: green;
+}
+.cm{
+    display: flex;
+    justify-content: space-between;
+}
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid #555;
+}
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border-radius: 50%;
+  }
+  .rectangle {
+    height: 50px;
+    width: 100px;
+    background-color: #555;
+  }
+  .parallelogram {
+	width: 100px;
+	height: 50px;
+	transform: skew(20deg);
+	background: #555;
+}
+.Rhombus {
+        width: 80px;
+        height: 80px;
+        background: #555;
+        transform: rotate(45deg);
+
+}
+
+.trapezoid {
+    width: 120px; /* Width of the top side */
+    height: 0; /* Height of the trapezoid */
+    border-bottom: 50px solid #555e; /* Width and color of the bottom side */
+    border-left: 75px solid transparent; /* Width of the left side */
+    border-right: 75px solid transparent; /* Width of the right side */
+  }
+
+  .ellipse {
+    width: 200px;
+    height: 100px;
+    background-color: #555e;
+    border-radius: 50%;
+}
+.cube{
+    text-align: center;
+}
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+  }

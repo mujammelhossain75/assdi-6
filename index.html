@@ -4,192 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculation Master</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-            padding: 20px;
-        }
-        .card {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin: 10px;
-            width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background-color: #fff;
-            transition: transform 0.2s ease-in-out;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card h2 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            color: #333;
-        }
-        .card label {
-            margin: 5px 0;
-            font-weight: bold;
-        }
-        .card input {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .card button {
-            padding: 10px;
-            margin: 5px 0;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            transition: background-color 0.3s ease;
-        }
-        .card button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            font-weight: bold;
-            color: #007bff;
-            font-size: 1.2em;
-        }
-    </style>
+    <!----link main css-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Basic Calculator -->
+                <h1>Name Of The Project:- Calculation Master </h1>
+        <!---calculator Area--->
         <div class="card">
-            <h2>Basic Calculator</h2>
-            <label for="num1">Number 1:</label>
-            <input type="number" id="num1">
-            <label for="num2">Number 2:</label>
-            <input type="number" id="num2">
-            <button onclick="calculateBasic('add')">Add</button>
-            <button onclick="calculateBasic('subtract')">Subtract</button>
-            <button onclick="calculateBasic('multiply')">Multiply</button>
-            <button onclick="calculateBasic('divide')">Divide</button>
-            <p>Result: <span id="basicResult" class="result"></span></p>
+            <div class="card-item">
+                <h2>Basic Calculator</h2>
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1">
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2">
+                <button onclick="primaryCalculate('add')">Add</button>
+                <button onclick="primaryCalculate('subtract')">Subtract</button>
+                <button onclick="primaryCalculate('multiply')">Multiply</button>
+                <button onclick="primaryCalculate('divide')">Divide</button>
+                <button onclick="primaryCalculate('interest')">Interest</button>
+                <button onclick="primaryCalculate('remainder')">Remainder</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="basicResult" class="result-m"></span> </p>
+            </div>
         </div>
 
-        <!-- Temperature Conversion -->
-        <div class="card">
-            <h2>Temperature Conversion</h2>
-            <label for="temp">Temperature:</label>
-            <input type="number" id="temp">
-            <button onclick="convertTemperature('toCelsius')">To Celsius</button>
-            <button onclick="convertTemperature('toFahrenheit')">To Fahrenheit</button>
-            <p>Result: <span id="tempResult" class="result"></span></p>
+         <!-- Temperature Area-->
+         <div class="card">
+            <div class="card-item">
+                <h2>Temperature Conversion</h2>
+                <label for="temp">Temperature:</label>
+                <input type="number" id="temp">
+                <button onclick="temperatureResult('toCelsius')">To Celsius</button>
+                <button onclick="temperatureResult('toFahrenheit')">To Fahrenheit</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="tempResult" class="result-m"></span></p>
+            </div>
         </div>
 
-        <!-- Circle Area -->
-        <div class="card">
-            <h2>Circle Area</h2>
-            <label for="radius">Radius:</label>
-            <input type="number" id="radius">
-            <button onclick="calculateCircleArea()">Calculate</button>
-            <p>Result: <span id="circleResult" class="result"></span></p>
+         <!---Circle Area--->
+         <div class="card">
+            <div class="card-item">
+            <div class="circle"></div>
+                <h2>Circle Area</h2>
+                <p>(A) = π * r * r</p>
+            <div class="cm">
+                <label for="radius">Radius:</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="radius">
+                <button onclick="circleArea()">Calculate Circle Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="circleResult" class="result-m"></span> Cm </p>
+            </div>
         </div>
 
-        <!-- Rectangle Area -->
-        <div class="card">
-            <h2>Rectangle Area</h2>
-            <label for="length">Length:</label>
-            <input type="number" id="length">
-            <label for="width">Width:</label>
-            <input type="number" id="width">
-            <button onclick="calculateRectangleArea()">Calculate</button>
-            <p>Result: <span id="rectangleResult" class="result"></span></p>
+         <!---rectangle Area--->
+         <div class="card">
+            <div class="card-item">
+                <div class="rectangle"></div>
+                <h2>Rectangle Area</h2>
+                <p>(A) = l * w</p>
+                <div class="cm">
+                    <label for="length">Length:</label>
+                    <label for="base">Cm*</label>
+                </div>
+                <input type="number" id="length">
+                <div class="cm">
+                    <label for="width">Width:</label>
+                    <label for="base">Cm*</label>
+                </div>
+                <input type="number" id="width">
+                <button onclick="RectangleArea()">Calculate Rectangle Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="rectangleResult" class="result-m"></span> Cm </p>
+            </div>
         </div>
 
-        <!-- Square Area -->
+         <!---Square Area--->
+         <div class="card">
+            <div class="card-item">
+            <div class="square"></div>
+                <h2 class="">square Area</h2>
+                <p>(A) = 6 * a * a</p>
+            <div class="cm">
+                <label for="base">Edge</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="square">
+
+                <button onclick="squareArea()">Calculate square Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="squareAreaResult" class="result-m"></span> </p>
+            </div>
+        </div>
+        
+        
+        <!---Triangle Area--->
         <div class="card">
-            <h2>Square Area</h2>
-            <label for="side">Side:</label>
-            <input type="number" id="side">
-            <button onclick="calculateSquareArea()">Calculate</button>
-            <p>Result: <span id="squareResult" class="result"></span></p>
+            <div class="card-item">
+            <div class="triangle"></div>
+                <h2 class="">Triangle Area</h2>
+                <p>(A) = 1/2 * b * h</p>
+            <div class="cm">
+                <label for="base">Base:</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="base">
+            <div class="cm">
+                <label for="base">Height:</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="height">
+                <button onclick="triangleArea()">Calculate Triangle Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="triangleResult" class="result-m"></span> Cm </p>
+            </div>
         </div>
 
-        <!-- Triangle Area -->
+        <!---parallelogramArea--->
         <div class="card">
-            <h2>Triangle Area</h2>
-            <label for="base">Base:</label>
-            <input type="number" id="base">
-            <label for="height">Height:</label>
-            <input type="number" id="height">
-            <button onclick="calculateTriangleArea()">Calculate</button>
-            <p>Result: <span id="triangleResult" class="result"></span></p>
+            <div class="card-item">
+            <div class="parallelogram"></div>
+                <h2 class="">Parallelogram Area</h2>
+                <p>(A) = b * h</p>
+            <div class="cm">
+                <label for="base">Base:</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="baseP">
+            <div class="cm">
+                <label for="base">Height:</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="heightP">
+                <button onclick="parallelogramArea()">Calculate Parallelogram Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="parallelogramResult" class="result-m"></span> </p>
+            </div>
         </div>
 
-        <!-- Add more cards for other shapes and calculations as needed -->
+        <!---Rhombus Area--->
+        <div class="card">
+            <div class="card-item">
+            <div class="Rhombus"></div>
+                <h2 class="">Rhombus Area</h2>
+                <p>(A) = 1/2 * d1 * d2</p>
+            <div class="cm">
+                <label for="base">Diagonal-1:</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="based">
+            <div class="cm">
+                <label for="base">Diagonal-2</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="heightd">
+                <button onclick="rhombusArea()">Calculate Rhombus Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="rhombusResult" class="result-m"></span> </p>
+            </div>
+        </div>
+
+         <!---Trapezoid Area--->
+         <div class="card">
+            <div class="card-item">
+            <div class="trapezoid"></div>
+                <h2 class="">Trapezoid Area</h2>
+                <p>(A) = 1/2 (a+b ) * h</p>
+            <div class="cm">
+                <label for="base">Base-1</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="base1">
+
+                <div class="cm">
+                    <label for="base">Base-2</label>
+                    <label for="base">Cm*</label>
+                </div>
+                    <input type="number" id="base1">
+            <div class="cm">
+                <label for="base">Height</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="height1">
+                <button onclick="trapezoidArea()">Calculate Trapezoid Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="trapezoidResult" class="result-m"></span> </p>
+            </div>
+        </div>
+        
+        
+         <!---Ellipse Area--->
+         <div class="card">
+            <div class="card-item">
+            <div class="ellipse"></div>
+                <h2 class="">Ellipse Area</h2>
+                <p>(A) = ᴨ * a * b</p>
+            <div class="cm">
+                <label for="base">A Axis</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="axis1">
+
+                <div class="cm">
+                    <label for="base">B Axis</label>
+                    <label for="base">Cm*</label>
+                </div>
+                    <input type="number" id="axis2">
+                <button onclick="ellipseArea()">Calculate ellipse Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="ellipseAreaResult" class="result-m"></span> </p>
+            </div>
+        </div>
+        
+        <!---cube Area--->
+        <div class="card">
+            <div class="card-item">
+            <div class="cube"><i class='fas fa-cube' style='font-size:48px;color:#555'></i></div>
+                <h2 class="">cube Area</h2>
+                <p>(A) = 6 * a * a</p>
+            <div class="cm">
+                <label for="base">Edge</label>
+                <label for="base">Cm*</label>
+            </div>
+                <input type="number" id="cube">
+
+                <button onclick="cubeArea()">Calculate cube Area</button>
+            </div>
+            <div class="result">
+                <p>Result: <span id="cubeAreaResult" class="result-m"></span> </p>
+            </div>
+        </div>
+        
+     
+
+
+
+
+     
+
+
+
+
+
     </div>
-
-    <script>
-        function calculateBasic(operation) {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            let result;
-            if (operation === 'add') {
-                result = num1 + num2;
-            } else if (operation === 'subtract') {
-                result = num1 - num2;
-            } else if (operation === 'multiply') {
-                result = num1 * num2;
-            } else if (operation === 'divide') {
-                result = num1 / num2;
-            }
-            document.getElementById('basicResult').innerText = result;
-        }
-
-        function convertTemperature(conversion) {
-            const temp = parseFloat(document.getElementById('temp').value);
-            let result;
-            if (conversion === 'toCelsius') {
-                result = (temp - 32) * 5 / 9;
-            } else if (conversion === 'toFahrenheit') {
-                result = (temp * 9 / 5) + 32;
-            }
-            document.getElementById('tempResult').innerText = result.toFixed(2);
-        }
-
-        function calculateCircleArea() {
-            const radius = parseFloat(document.getElementById('radius').value);
-            const area = Math.PI * radius * radius;
-            document.getElementById('circleResult').innerText = area.toFixed(2);
-        }
-
-        function calculateRectangleArea() {
-            const length = parseFloat(document.getElementById('length').value);
-            const width = parseFloat(document.getElementById('width').value);
-            const area = length * width;
-            document.getElementById('rectangleResult').innerText = area.toFixed(2);
-        }
-
-        function calculateSquareArea() {
-            const side = parseFloat(document.getElementById('side').value);
-            const area = side * side;
-            document.getElementById('squareResult').innerText = area.toFixed(2);
-        }
-
-        function calculateTriangleArea() {
-            const base = parseFloat(document.getElementById('base').value);
-            const height = parseFloat(document.getElementById('height').value);
-            const area = 0.5 * base * height;
-            document.getElementById('triangleResult').innerText = area.toFixed(2);
-        }
-    </script>
+    <!--font awosome-->
+    <script src="https://kit.fontawesome.com/a2b774eb59.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
