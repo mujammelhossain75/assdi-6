@@ -19,7 +19,7 @@ function primaryCalculate(operation) {
     } else if (operation === 'interest') {
         result = num1 & num2;
     }else if (operation === 'remainder') {
-        result = num1 % num2;
+        result = num1 / num2;
     }
     
     
